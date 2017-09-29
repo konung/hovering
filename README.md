@@ -46,10 +46,10 @@ Default `get` will make a call to `https://www.hover.com/api/domains`. You can s
 For your convenience several get methods are provided directly through the Hovering::Client object
 
 ```ruby
-@client.domains
-@client.dns
-@client.forwards
-@client.mailboxes
+@client.all_domains
+@client.all_dns
+@client.all_forwards
+@client.all_mailboxes
 ```
 
 ## Support
@@ -63,7 +63,7 @@ However you can update such things as A, CNAME, MX, etc records, and some proper
 I don't use Mailboxes feature of Hover.com - so any help testing / developing that is appreciated. Right now gem just provides a basic read functionality for that feature.
 
 ## Author
-Questions & success stories? Drop me a line
+Questions & success stories? Drop me a line to
 Nick Gorbikoff
 on Twitter: [@gorbikoff](https://twitter.com/gorbikoff)
 
@@ -84,7 +84,7 @@ The gem is available as open source under the terms of the [MIT License](http://
 
 ## Code of Conduct
 
-Everyone interacting in the Hovering project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/hovering/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Hovering project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/konung/hovering/blob/master/CODE_OF_CONDUCT.md).
 
 ## Disclaimer of Warranties and Limitation of Liability.
 
