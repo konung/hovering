@@ -84,7 +84,7 @@ The gem is available as open source under the terms of the [MIT License](http://
 
 ## Code of Conduct
 
-Everyone interacting in the Hovering project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/konung/hovering/blob/master/CODE_OF_CONDUCT.md).
+Be nice. Be respectful. Or else.
 
 ## Disclaimer of Warranties and Limitation of Liability.
 
