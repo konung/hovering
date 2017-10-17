@@ -16,11 +16,15 @@ gem 'hovering'
 
 And then execute:
 
-    $ bundle
+```shell
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install hovering
+```shell
+$ gem install hovering
+```
 
 ## Usage
 
