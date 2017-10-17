@@ -63,9 +63,7 @@ However you can update such things as A, CNAME, MX, etc records, and some proper
 I don't use Mailboxes feature of Hover.com - so any help testing / developing that is appreciated. Right now gem just provides a basic read functionality for that feature.
 
 ## Author
-Questions & success stories? Drop me a line to
-Nick Gorbikoff
-on Twitter: [@gorbikoff](https://twitter.com/gorbikoff)
+Questions & success stories? Drop me a line. Nick Gorbikoff on Twitter:  [@gorbikoff](https://twitter.com/gorbikoff)
 
 ## Development
 

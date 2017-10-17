@@ -1,0 +1,197 @@
+{
+   "succeeded":true,
+   "domains":[
+      {
+         "id":"dom2055124",
+         "domain_name":"gorbikoff.com",
+         "num_emails":0,
+         "renewal_date":"2019-01-19",
+         "display_date":"2019-01-19",
+         "registered_date":"2006-01-19",
+         "status":"active",
+         "auto_renew":true,
+         "renewable":true,
+         "locked":true,
+         "whois_privacy":true,
+         "nameservers":[
+            "ns3.hover.com",
+            "ns4.hover.com",
+            "ns1.hover.com",
+            "ns2.hover.com"
+         ],
+         "contacts":{
+            "admin":{
+               "country":"US",
+               "address3":"",
+               "org_name":"Example, LLC",
+               "status":"active",
+               "phone":"+1.1234567890",
+               "address2":"",
+               "last_name":"Gorbikoff",
+               "state":"IL",
+               "email":"domains@example.com",
+               "city":"Chicagoland",
+               "fax":"",
+               "address1":"555 Example Dr",
+               "first_name":"Nick",
+               "zip":"60625"
+            },
+            "owner":{
+               "country":"US",
+               "address3":"",
+               "org_name":"Example, LLC",
+               "status":"active",
+               "phone":"+1.1234567890",
+               "address2":"",
+               "last_name":"Gorbikoff",
+               "state":"IL",
+               "email":"domains@example.com",
+               "city":"Chicagoland",
+               "fax":"",
+               "address1":"555 Example Dr",
+               "first_name":"Nick",
+               "zip":"60625"
+            },
+            "tech":{
+               "country":"CA",
+               "address3":"",
+               "status":"active",
+               "org_name":"Hover, a service of Tucows.com Co",
+               "phone":"+1.8667316556",
+               "address2":"",
+               "state":"ON",
+               "last_name":"Contact",
+               "email":"help@hover.com",
+               "city":"Toronto",
+               "fax":"",
+               "address1":"96 Mowat Ave.",
+               "first_name":"Support",
+               "zip":"M6K 3M1"
+            },
+            "billing":{
+               "country":"US",
+               "address3":"",
+               "org_name":"Example, LLC",
+               "status":"active",
+               "phone":"+1.1234567890",
+               "address2":"",
+               "last_name":"Gorbikoff",
+               "state":"IL",
+               "email":"domains@example.com",
+               "city":"Chicagoland",
+               "fax":"",
+               "address1":"555 Example Dr",
+               "first_name":"Nick",
+               "zip":"60625"
+            }
+         },
+         "dnssec":null,
+         "glue":{
+
+         },
+         "hover_user":{
+            "email":"domains@example.com",
+            "email_secondary":null,
+            "billing":{
+               "pay_mode":"paypal",
+               "paypal_email":"domains@example.com"
+            }
+         }
+      },
+      {
+         "id":"dom2058643",
+         "domain_name":"history-bits.com",
+         "num_emails":0,
+         "renewal_date":"2018-08-28",
+         "display_date":"2018-08-28",
+         "registered_date":"2017-08-28",
+         "status":"active",
+         "auto_renew":true,
+         "renewable":true,
+         "locked":true,
+         "whois_privacy":true,
+         "nameservers":[
+            "ns1.hover.com",
+            "ns2.hover.com"
+         ],
+         "contacts":{
+            "admin":{
+               "country":"US",
+               "address3":"",
+               "org_name":"Example, LLC",
+               "status":"active",
+               "phone":"+1.1234567890",
+               "address2":"",
+               "last_name":"Gorbikoff",
+               "state":"IL",
+               "email":"domains@example.com",
+               "city":"Chicagoland",
+               "fax":"",
+               "address1":"555 Example Dr",
+               "first_name":"Nick",
+               "zip":"60625"
+            },
+            "owner":{
+               "country":"US",
+               "address3":"",
+               "org_name":"Example, LLC",
+               "status":"active",
+               "phone":"+1.1234567890",
+               "address2":"",
+               "last_name":"Gorbikoff",
+               "state":"IL",
+               "email":"domains@example.com",
+               "city":"Chicagoland",
+               "fax":"",
+               "address1":"555 Example Dr",
+               "first_name":"Nick",
+               "zip":"60625"
+            },
+            "tech":{
+               "country":"CA",
+               "address3":"",
+               "status":"active",
+               "org_name":"Hover, a service of Tucows.com Co",
+               "phone":"+1.8667316556",
+               "address2":"",
+               "state":"ON",
+               "last_name":"Contact",
+               "email":"help@hover.com",
+               "city":"Toronto",
+               "fax":"",
+               "address1":"96 Mowat Ave.",
+               "first_name":"Support",
+               "zip":"M6K 3M1"
+            },
+            "billing":{
+               "country":"US",
+               "address3":"",
+               "org_name":"Example, LLC",
+               "status":"active",
+               "phone":"+1.1234567890",
+               "address2":"",
+               "last_name":"Gorbikoff",
+               "state":"IL",
+               "email":"domains@example.com",
+               "city":"Chicagoland",
+               "fax":"",
+               "address1":"555 Example Dr",
+               "first_name":"Nick",
+               "zip":"60625"
+            }
+         },
+         "dnssec":null,
+         "glue":{
+
+         },
+         "hover_user":{
+            "email":"domains@example.com",
+            "email_secondary":null,
+            "billing":{
+               "pay_mode":"paypal",
+               "paypal_email":"domains@example.com"
+            }
+         }
+      }
+   ]
+}
