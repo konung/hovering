@@ -5,6 +5,7 @@ PATH
       faraday (~> 0.13)
       multi_json (~> 1.12)
       roar (~> 1.1)
+      trailblazer (~> 2.0)
       virtus (~> 1.0)
 
 GEM
@@ -20,9 +21,17 @@ GEM
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
     declarative (0.0.10)
+    declarative-builder (0.1.0)
+      declarative-option (< 0.2.0)
     declarative-option (0.1.0)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
+    disposable (0.4.3)
+      declarative (>= 0.0.9, < 1.0.0)
+      declarative-builder (< 0.2.0)
+      declarative-option (< 0.2.0)
+      representable (>= 2.4.0, <= 3.1.0)
+      uber (< 0.2.0)
     equalizer (0.0.11)
     faraday (0.13.1)
       multipart-post (>= 1.2, < 3)
@@ -31,6 +40,7 @@ GEM
     minitest (5.10.3)
     multi_json (1.12.2)
     multipart-post (2.0.0)
+    pipetree (0.1.1)
     pry (0.11.1)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -41,6 +51,9 @@ GEM
       pry (~> 0.9)
       yard (~> 0.9)
     rake (10.4.2)
+    reform (2.2.4)
+      disposable (>= 0.4.1)
+      representable (>= 2.4.0, < 3.1.0)
     representable (3.0.4)
       declarative (< 0.1.0)
       declarative-option (< 0.2.0)
@@ -48,7 +61,15 @@ GEM
     roar (1.1.0)
       representable (~> 3.0.0)
     thread_safe (0.3.6)
-    uber (0.0.15)
+    trailblazer (2.0.7)
+      declarative
+      reform (>= 2.2.0, < 3.0.0)
+      trailblazer-operation (>= 0.0.12, < 0.1.0)
+    trailblazer-operation (0.0.13)
+      declarative
+      pipetree (>= 0.1.1, < 0.2.0)
+      uber
+    uber (0.1.0)
     virtus (1.0.5)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
@@ -60,13 +81,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  awesome_print
+  awesome_print (~> 1)
   bundler (~> 1.15)
   hovering!
   minitest (~> 5.0)
-  pry
-  pry-byebug
-  pry-doc
+  pry (~> 0.11)
+  pry-byebug (~> 3.5)
+  pry-doc (~> 0.11)
   rake (~> 10.0)
 
 BUNDLED WITH

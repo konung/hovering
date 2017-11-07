@@ -1,8 +1,10 @@
 require 'faraday'
+require 'trailblazer'
 require 'roar'
 require 'roar/json'
 require 'roar/coercion'
 require 'roar/decorator'
+require 'hovering/errors'
 require 'hovering/contacts'
 require 'hovering/domains'
 require 'hovering/dns_records'
@@ -11,13 +13,6 @@ require 'hovering/mailboxes'
 
 module Hovering
 
-  class ErrorRepresenter < Roar::Decorator
-    include Roar::JSON
-    property :error_code
-    property :error
-    property :status
-    property :succeded
-  end
 
   class ClientRepresenter < Roar::Decorator
     include Roar::JSON

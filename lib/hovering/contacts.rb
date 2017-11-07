@@ -30,4 +30,11 @@ module Hovering
     property :tech, decorator: ContactRepresenter, class: Contact
     property :billing, decorator: ContactRepresenter, class: Contact
   end
+
+  class Contact::Create < Trailblazer::Operation
+    step :here
+    def here(options, **)
+      puts 'here'
+    end
+  end
 end

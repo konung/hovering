@@ -8,3 +8,16 @@ Rake::TestTask.new(:test) do |t|
 end
 
 task :default => :test
+
+task :console do
+  require 'pry'
+  require 'hovering'
+
+  def reload!
+    files = $LOADED_FEATURES.select { |feat| feat =~ /\/hovering\// }
+    files.each { |file| load file }
+  end
+
+  ARGV.clear
+  Pry.start
+end
