@@ -1,32 +1,7 @@
-module Macro
-  def self.GetCallTo(endpoint: )
-    step = ->(input, options) do
-      options["hovering.api_call.response"] = Hovering::Api::Get.({'client' => options['params']['client'], 'endpoint' =>  endpoint})['model']
-    end
-    [ step, name: "hovering.api_call.#{endpoint}" ]
-  end
-
-  def self.ParseApiResponse()
-    step = ->(input, options) do
-      options['model'] = options['representer.default.class'].new(options['model.class'].new).from_json(options['hovering.api_call.response'])
-    end
-    [ step, name: "hovering.api_call.parsing" ]
-  end
-
-  def self.HandleError(error: StandardError, message: 'Hovering Error')
-    step = ->(input, options) do
-      raise error, message
-    end
-    [ step, name: "hovering.handle_error" ]
-  end
-end
-
 module Hovering
-
   class ForwardError < StandardError; end
   class Forward < OpenStruct; end
   class DomainForward < OpenStruct; end
-  class AccountForward < OpenStruct; end
 
   class ForwardRepresenter < Roar::Decorator
     include Roar::JSON
@@ -52,14 +27,14 @@ module Hovering
     collection :domains, extend: DomainForwardRepresenter, class: DomainForward
   end
 
-  class AccountForward
+  class AccountForward < OpenStruct
     class List < Trailblazer::Operation
       extend Representer::DSL
       representer AccountForwardRepresenter
       step Model(AccountForward, :new)
-      step Macro.GetCallTo(endpoint: 'forwards')
-      step Macro.ParseApiResponse()
-      failure Macro.HandleError(error: ForwardError, message: "Can't list / get account forwards")
+      step Hovering::Macro::GetCallTo(endpoint: 'forwards')
+      step Hovering::Macro::ParseApiResponse()
+      failure Hovering::Macro::HandleError(error: ForwardError, message: "Can't list / get account forwards")
     end
   end
 end
