@@ -1,7 +1,9 @@
 module Hovering
 
+  class ContactError < StandardError; end
+  # Single contact
   class Contact < OpenStruct; end
-
+  # Collections of Contacts
   class Contacts < OpenStruct; end
 
   class ContactRepresenter < Roar::Decorator
@@ -31,10 +33,6 @@ module Hovering
     property :billing, decorator: ContactRepresenter, class: Contact
   end
 
-  class Contact::Create < Trailblazer::Operation
-    step :here
-    def here(options, **)
-      puts 'here'
-    end
-  end
+  # class Contact::Create < Trailblazer::Operation
+  # end
 end

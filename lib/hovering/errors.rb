@@ -9,7 +9,7 @@ module Hovering
     property :error_code
     property :error
     property :status
-    property :succeded
+    property :succeeded
   end
 
   class ErrorsRepresenter < Roar::Decorator

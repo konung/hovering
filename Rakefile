@@ -16,6 +16,7 @@ task :console do
   def reload!
     files = $LOADED_FEATURES.select { |feat| feat =~ /\/hovering\// }
     files.each { |file| load file }
+    puts 'Reloaded!'
   end
 
   ARGV.clear
