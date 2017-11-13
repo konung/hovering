@@ -1,7 +1,7 @@
 module Hovering
   class ForwardError < StandardError; end
-  class Forward < OpenStruct; end
   class DomainForward < OpenStruct; end
+  class Forward < OpenStruct; end
 
   class ForwardRepresenter < Roar::Decorator
     include Roar::JSON
@@ -27,12 +27,22 @@ module Hovering
     collection :domains, extend: DomainForwardRepresenter, class: DomainForward
   end
 
+  class Forward < OpenStruct
+    class Delete < Trailblazer::Operation
+      extend Representer::DSL
+      representer ForwardRepresenter
+      step ->(options){ puts "Deleteing " + options["params"][:id].to_s; true}
+      failure Hovering::Macro::HandleError(error: ForwardError, message: "Can't delete forwarding / redirect")
+    end
+  end
+
+
   class AccountForward < OpenStruct
     class List < Trailblazer::Operation
       extend Representer::DSL
       representer AccountForwardRepresenter
       step Model(AccountForward, :new)
-      step Hovering::Macro::GetCallTo(endpoint: 'forwards')
+      step ->(options, params){ options['hovering.api_call.response.raw'] = Hovering::Api::Get.(client: params[:params][:client], endpoint: 'forwards')['model']}
       step Hovering::Macro::ParseApiResponse()
       failure Hovering::Macro::HandleError(error: ForwardError, message: "Can't list / get account forwards")
     end

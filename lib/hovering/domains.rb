@@ -1,9 +1,12 @@
 require 'hovering/contacts'
+require 'hovering/forwards'
+require 'hovering/dns_records'
+require 'hovering/mailboxes'
 
 module Hovering
 
   class Domain < OpenStruct; end
-  class AccountDomains < OpenStruct; end
+  class AccountDomain < OpenStruct; end
 
   class DomainRepresenter < Roar::Decorator
     include Roar::JSON
@@ -32,11 +35,16 @@ module Hovering
       end
     end
     property :contacts, decorator: ContactsRepresenter, class: Contacts
+    collection :forwards, decorator: ForwardRepresenter, class: Forward
+    collection :entries, decorator: DnsRecordRepresenter, class: DnsRecord
+    collection :mailboxes, decorator: MailboxRepresenter, class: Mailbox
   end
 
-  class AccountDomainsRepresenter < Roar::Decorator
+  class AccountDomainRepresenter < Roar::Decorator
     include Roar::JSON
-    property :succeded
+    property :succeeded, type: Axiom::Types::Boolean
     collection :domains, extend: DomainRepresenter, class: Domain
+    property :can_create, type: Axiom::Types::Boolean
+    collection :mailbox_domains, extend: DomainMailboxesRepresenter, class: DomainMailboxes
   end
 end

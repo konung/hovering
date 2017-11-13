@@ -25,6 +25,7 @@ module Hovering
     property :country, type: String
   end
 
+  # Special type of entity . Can't use collection in DomainRepresenter for this
   class ContactsRepresenter < Roar::Decorator
     include Roar::JSON
     property :admin, decorator: ContactRepresenter, class: Contact
@@ -32,7 +33,4 @@ module Hovering
     property :tech, decorator: ContactRepresenter, class: Contact
     property :billing, decorator: ContactRepresenter, class: Contact
   end
-
-  # class Contact::Create < Trailblazer::Operation
-  # end
 end
