@@ -8,3 +8,16 @@ require "hovering"
 
 require "pry"
 Pry.start
+
+
+# @client = Hovering::Client.new(username: 'birica', password: 'Hren555!' )
+# resp = @client.connection('domains/dom2055093/forwards').post do |req|
+# req.body = '
+# {
+#       "path":"test6",
+#       "url":"http://partylikearussian.com",
+#       "stealth":false,
+#       "type":"subdomain",
+#       "subdomain":true
+# }'
+# end.body

@@ -1,6 +1,10 @@
-require 'dry/validation'
-require 'reform'
 require 'trailblazer'
+require 'reform'
+require 'reform/form/active_model/validations'
+Reform::Form.class_eval do
+  include Reform::Form::ActiveModel::Validations
+end
+
 require 'hovering/macro'
 require 'hovering/client'
 require 'hovering/errors'
@@ -9,55 +13,45 @@ module Hovering
   class Api
     class ApiError < StandardError; end
 
+
+
     # This is a model-less operation, so using pre-operation schema validation to check if all params are supplied
     class Get < Trailblazer::Operation
-      extend Contract::DSL
-
-      CheckParamsSchema = Dry::Validation.Schema do
-        required(:client).filled
-        required(:endpoint).filled
+      class Form < Reform::Form
+        property :id
+        property :client
+        property :endpoint
+        validates :client, presence: true
+        validates :endpoint, presence: true
       end
-
-      contract "params", CheckParamsSchema
-
-      step Contract::Validate( name: "params" ), before: "operation.new"
-      # This will be run a as class method, not instance,  because of the guard condition above
-      failure Hovering::Macro::HandleDryValidationErrors(schema: CheckParamsSchema)
-
+      step Contract::Build( constant: Form )
+      step Contract::Validate(), before: "operation.new"
+      step Contract::Validate()
       step Hovering::Macro::MakeApiCall(action: 'get')
-      failure Hovering::Macro::HandleError(error: ApiError, message: "Can't make a call to to Hover.com API")
-
+      fail Hovering::Macro::HandleError(error: ApiError, message: "Can't make a call to to Hover.com API")
       step Hovering::Macro::CheckResponseValidJson()
-      failure Hovering::Macro::HandleError(error: ApiError, message: "Response is not valid JSON")
-
+      fail Hovering::Macro::HandleError(error: ApiError, message: "Response is not valid JSON")
       step Hovering::Macro::CheckApiResponseForErrors()
-      failure Hovering::Macro::HandleError(error: ApiError, message: 'Something happened during an API call')
+      fail Hovering::Macro::HandleError(error: ApiError, message: 'Something happened during an API call')
     end
 
 
     class Delete < Trailblazer::Operation
-      extend Contract::DSL
-
-      CheckParamsSchema = Dry::Validation.Schema do
-        required(:id).filled
-        required(:client).filled
-        required(:endpoint).filled
+      class Form < Reform::Form
+        property :id
+        property :client
+        property :endpoint
+        validates :id, presence: true
+        validates :client, presence: true
+        validates :endpoint, presence: true
       end
-
-      contract "params", CheckParamsSchema
-
+      step Contract::Build( constant: Form )
       step Contract::Validate( name: "params" ), before: "operation.new"
-      # This will be run a as class method, not instance,  because of the guard condition above
-      failure Hovering::Macro::HandleDryValidationErrors(schema: CheckParamsSchema)
-
+      step Contract::Validate()
       step Hovering::Macro::MakeApiCall(action: 'delete')
-      #failure Hovering::Macro::HandleError(error: ApiError, message: "Can't make a call to to Hover.com API")
-
       step Hovering::Macro::CheckResponseValidJson()
-      #failure Hovering::Macro::HandleError(error: ApiError, message: "Response is not valid JSON")
-
       step Hovering::Macro::CheckApiResponseForErrors()
-      failure Hovering::Macro::HandleError(error: ApiError, message: 'Something happened during an API call')
+      fail Hovering::Macro::HandleError(error: ApiError, message: 'Something happened during an API call')
     end
 
   end
