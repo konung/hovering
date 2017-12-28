@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/konung/hovering.svg?branch=master)](https://travis-ci.org/konung/hovering.svg?branch=master)
+[//]: <> [![Gem Version](https://badge.fury.io/rb/hovering.svg)](http://badge.fury.io/rb/hovering)
+
 # Hovering
 
 Hovering is client gem to connect to Hover.com api to help read / update domain records. There is no official API support from Hover.com yet. This gem is piggybacking of the Hover's control_panel, which is really great. But sometimes you need to be able to update 50 nameserver records to point to new hosting - this when Hovering could help. Use at your own risk :-)
