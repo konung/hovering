@@ -23,7 +23,7 @@ module Hovering
         property :client, type: Types::Coercible::String
         property :endpoint, type: Types::Coercible::String
 
-        validation name: :default do
+      validation name: :default do
           required(:id).maybe
           required(:client).filled
           required(:endpoint).filled
