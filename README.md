@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/konung/hovering.svg?branch=master)](https://travis-ci.org/konung/hovering.svg?branch=master)
-[//]: <> [![Gem Version](https://badge.fury.io/rb/hovering.svg)](http://badge.fury.io/rb/hovering)
+[![Gem Version](https://badge.fury.io/rb/hovering.svg)](http://badge.fury.io/rb/hovering)
 
 # Hovering
 
